@@ -1,0 +1,64 @@
+
+.menTitle
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.Category1
+{
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    margin-top: 5%;
+    flex-wrap: wrap;
+    /* max-width: 35%; */
+    align-items: center;
+    /* background-color: red; */
+    
+}
+
+.Category1 img
+{
+    max-width:35%;
+    padding: 10px 0px;
+}
+
+.items
+{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.Category1 img:hover
+{
+    transform: scale(1.2);
+    transition: 1.5s;
+}
+
+.minus
+{
+    position: relative;
+    padding: 0px 5px;
+    font-size: 2rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.plus
+{
+    position: relative;
+    padding: 0px 5px;
+    font-size: 2rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.contents
+{
+    position: relative;
+    font-size: large;
+    font-weight: bold;
+}
