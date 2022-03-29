@@ -10,60 +10,62 @@ import ShoesData from './ShoesData';
 
 
 function Shoes() {
- const[increase1,setIncrease1]=useState(0)
- const[increase2,setIncrease2]=useState(0)
- const[increase3,setIncrease3]=useState(0)
- const[increase4,setIncrease4]=useState(0)
 
 
- const [showForm,setShowForm]=useState(false)
+  const [showForm, setShowForm] = useState(false)
 
-const[increase,setIncrease]=useState(0)
+  const [increase, setIncrease] = useState(0)
+  const [incr, setIncr] = useState({
+
+    img1: 0,
+    img2: 0,
+    img3: 0,
+    img4: 0,
+
+  })
 
 
-const {productItems}=ShoesData;
+  const { productItems } = ShoesData;
 
   return (
-<div >
-    <h2>Shoes</h2>
-<div className='menTitle'>
-      <h3>Mens Active wear Shoes</h3>     
-    {/* <div className='Category1'> */}
-      
+    <div >
+      <h2>Shoes</h2>
+      <div className='menTitle'>
+        <h3>Mens Active wear Shoes</h3>
+        <div className='Category1'>
+          {productItems.map((productItems) => (
+            <div className='items' key={productItems.id}>
+              <img src={productItems.image} alt={productItems.name} />
+              <h2>{productItems.name}</h2>
+              <h4>{productItems.price}</h4>
+              <button>-</button>
+              <p>{increase}</p>
+              <button onClick={() => setIncr((counter) => ({ ...counter, img1: counter.img1 + 1 }))}>+</button>
 
-     <div className='Category1'>
-       {productItems.map((productItems)=>(
-            <div className='items'>
-            <img src={productItems.image} alt={productItems.name} />
-            <h2>{productItems.name}</h2>
-            <h4>{productItems.price}</h4>
-            <button>-</button>
-            <p>{increase}</p>
-            <button onClick={()=>setIncrease(increase+1)}>+</button>
+              <h2>{incr.img1}</h2>
             </div>
-       ))}
-     </div>
+          ))}
+        </div>
+
+        {increase ? <img src={cartLogo} alt="" id="cart" onClick={() => setShowForm(true)} /> : null}
+        {increase ? <p className="showCart">{increase}</p> : null}
 
 
-      <img src={cartLogo} alt="" id="cart" onClick={()=>setShowForm(true)} />
-    {increase?<p className="showCart">{increase}</p>:null}
+        {showForm ? <div className="form-popup" id="myForm">
+          <div classNme="form-container">
+            <h2>Cart</h2>
+            {!increase ? <p id="title">Your Cart is empty</p> : <span className="cartIncrease">Your cart has {increase} {increase > 1 ? 'items' : 'item'}</span>}
+            <img src={logo1} alt="" className="cartImage" />
+            <p className="title2">$125 x {increase} = ${increase * 125}</p>
 
+            <button id="check" onClick={() => setIncrease(0)}>Checkout</button>
+            <button className="btn cancel" onClick={() => setShowForm(false)}>
+              <img src={closeLogo} alt="" />
+            </button>
+          </div>
+        </div> : null}
 
-      {showForm ?<div className="form-popup" id="myForm">
-  <div classNme="form-container">
-<h2>Cart</h2>
-{!increase?<p id="title">Your Cart is empty</p>:<span className="cartIncrease">Your cart has {increase} {increase>1? 'items':'item'}</span>}
-<img src={logo1} alt="" className="cartImage"/>
-<p className="title2">$125 x {increase} = ${increase*125}</p>
-
-  <button id="check" onClick={()=>setIncrease(0)}>Checkout</button>
-<button className="btn cancel" onClick={()=>setShowForm(false)}>
-<img src={closeLogo} alt="" />
-</button>
-</div>
-</div>:null}
-
-    </div>
+      </div>
     </div>
   )
 }

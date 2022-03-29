@@ -11,9 +11,6 @@ const ShoesData={
             name:"nike1",
             price:7500,
             image:logo1,
-            buttonMinus:"-",
-            p:"he",
-            buttonPlus:"+"
         },
         {
             id:"2",
