@@ -25,7 +25,7 @@ const {productItems}=SneakersData;
 
   return (
 <div >
-    <h2>Sneakers</h2>
+    {/* <h2>Sneakers</h2> */}
 <div className='menTitle'>
       <h3>Mens Active wear Sneakers</h3>     
     {/* <div className='Category1'> */}

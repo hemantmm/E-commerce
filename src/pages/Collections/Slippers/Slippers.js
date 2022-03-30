@@ -19,7 +19,7 @@ const {productItems}=SlippersData;
 
   return (
 <div >
-    <h2>Slippers</h2>
+    {/* <h2>Slippers</h2> */}
 <div className='menTitle'>
       <h3>Mens Active wear Slippers</h3>     
     {/* <div className='Category1'> */}

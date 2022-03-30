@@ -12,3 +12,9 @@
     justify-content: space-around;
 }
 
+.Category div 
+{
+    display: flex;
+    justify-content: space-around;
+    cursor: pointer;
+}

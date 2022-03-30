@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-// import logo from '../src/images/Shoess/logo.svg'
 
 import './Shoes.css';
 import cartLogo from '../../../images/icon-cart.svg'
@@ -25,10 +24,8 @@ const {productItems}=ShoesData;
 
   return (
 <div >
-    <h2>Shoes</h2>
 <div className='menTitle'>
       <h3>Mens Active wear Shoes</h3>     
-    {/* <div className='Category1'> */}
       
 
      <div className='Category1'>
@@ -56,7 +53,7 @@ const {productItems}=ShoesData;
 <img src={logo1} alt="" className="cartImage"/>
 <p className="title2">$125 x {increase} = ${increase*125}</p>
 
-  <button id="check" onClick={()=>setIncrease(0)}>Checkout</button>
+  <button className="check" onClick={()=>setIncrease(0)}>Checkout</button>
 <button className="btn cancel" onClick={()=>setShowForm(false)}>
 <img src={closeLogo} alt="" />
 </button>
