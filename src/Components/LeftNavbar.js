@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import Images from './Images'
+import Images from '../Constants/Images'
 
-import nextLogo from "../src/images/icon-next.svg";
-import prevLogo from "../src/images/icon-previous.svg";
+import nextLogo from "../images/icon-next.svg";
+import prevLogo from "../images/icon-previous.svg";
 
 export default function LeftNavbar() {
    const[selectedImg , setSelectedImg]=useState(Images[0])

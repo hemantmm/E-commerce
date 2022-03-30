@@ -27,16 +27,15 @@ const {productItems}=SneakersData;
 <div >
     {/* <h2>Sneakers</h2> */}
 <div className='menTitle'>
-      <h3>Mens Active wear Sneakers</h3>     
-    {/* <div className='Category1'> */}
+      <h3>Mens </h3>     
       
 
      <div className='Category1'>
        {productItems.map((productItems)=>(
             <div className='items'>
             <img src={productItems.image} alt={productItems.name} />
-            <h2>{productItems.name}</h2>
-            <h4>{productItems.price}</h4>
+            <h2>2.{productItems.name}</h2>
+            <h4>2.{productItems.price}</h4>
             <button>-</button>
             <p>{increase1}</p>
             <button onClick={()=>setIncrease1(increase1+1)}>+</button>
