@@ -1,6 +1,4 @@
 import React, { useState } from 'react'
-// import logo from '../src/images/Shoess/logo.svg'
-
 import './Shoes.css';
 import cartLogo from '../../../images/icon-cart.svg'
 import logo1 from '../../../images/image-product-1.jpg'
@@ -63,9 +61,6 @@ function Shoes() {
               {inc3 > -1 && productItems.id === 3 && <p>{inc3}</p>}
               {inc4 > -1 && productItems.id === 4 && <p>{inc4}</p>}
               <button onClick={() => btnPHandle(productItems.id)}>+</button>
-
-              {/* const ids=`${productItems.id}`; */}
-              {/* {incr.img2 > 0 ? <h2>{incr.img1}</h2> : <h2>{ }</h2>} */}
 
             </div>
           ))}
