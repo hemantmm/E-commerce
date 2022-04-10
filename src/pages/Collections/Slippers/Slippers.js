@@ -18,24 +18,12 @@ function Slippers() {
   const { productItems } = SlippersData;
 
   return (
-<<<<<<< HEAD
-<div >
-    {/* <h2>Slippers</h2> */}
-<div className='menTitle'>
-      <h3>Mens Active wear Slippers</h3>     
-    {/* <div className='Category1'> */}
-      
-
-     <div className='Category1'>
-       {productItems.map((productItems)=>(
-=======
     <div >
       {/* <h2 style={{textAlign:'center'}}>Slippers</h2> */}
       <div className='menTitle'>
         <h3>Mens Active wear Slippers</h3>
         <div className='Category1'>
           {productItems.map((productItems) => (
->>>>>>> 0700fe45148328a709db74806f8cfb6277657b77
             <div className='items'>
               <img src={productItems.image} alt={productItems.name} />
               <h2>{productItems.name}</h2>

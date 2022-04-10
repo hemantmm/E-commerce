@@ -8,6 +8,12 @@ export default function RightNavbar() {
 
   const [increase, setIncrease] = useState(0)
 
+   function proceed()
+   {
+     alert("hi")
+     setIncrease(0)
+   }
+
   return (
     <>
       <img src={cartLogo} alt="" id="cart" onClick={() => setShowForm(true)} />
@@ -33,6 +39,7 @@ export default function RightNavbar() {
           {!increase ? <p id="title">Your Cart is empty</p> : <span className="cartIncrease">Your cart has {increase} {increase > 1 ? 'items' : 'item'}</span>}
           <img src={logo1} alt="" className="cartImage" />
           <p className="title2">$125 x {increase} = ${increase * 125}</p>
+         {increase? <button className="proceed" onClick={proceed}>Proceed</button>:null}
 
           <button id="check" onClick={() => setIncrease(0)}>Checkout</button>
           <button className="btn cancel" onClick={() => setShowForm(false)}>
@@ -41,12 +48,6 @@ export default function RightNavbar() {
         </div>
       </div> : null}
 
-
-      {/* <div class="buttons">
-    <button onclick="decrease()">-</button>
-    <button id="values">0</button>
-    <button onclick="increase()">+</button>
-  </div> */}
     </>
   );
 
