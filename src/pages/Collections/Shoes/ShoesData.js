@@ -4,7 +4,7 @@ import logo3 from '../../../images/image-product-3.jpg'
 import logo4 from '../../../images/image-product-4.jpg'
 
 
-const ShoesData={
+export const ShoesData={
     productItems:[
         {
             id:1,

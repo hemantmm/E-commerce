@@ -8,27 +8,23 @@
 
 .Category1
 {
-    display: flex;
-    justify-content: space-evenly;
-    flex-direction: row;
-    margin-top: 5%;
-    flex-wrap: wrap;
+    /* display: flex; */
+    /* justify-content: space-evenly; */
+    /* flex-direction: row; */
+    /* margin-top: 5%; */
+    /* flex-wrap: wrap; */
     /* max-width: 35%; */
-    align-items: center;
+    /* align-items: center; */
     /* background-color: red; */
     
 }
 
-.Category1 img
-{
-    max-width:35%;
-    padding: 10px 0px;
-}
 
-.items
+
+.itemsCart
 {
-    display: flex;
-    justify-content: space-around;
+    /* display: flex; */
+    /* justify-content: space-around; */
     align-items: center;
 }
 
@@ -61,4 +57,139 @@
     position: relative;
     font-size: large;
     font-weight: bold;
+}
+
+
+
+.Carts
+{
+    position: absolute;
+    left: 5%;
+    top: 5%;
+}
+
+
+
+
+.showCarts
+{
+    border: 2px solid;
+    border-radius: 35px;
+    font-size: larger;
+    background-color: aqua;
+    /* color: #ffff; */
+    /* padding: 2px 3px; */
+    position: absolute;
+    top: 15px;
+    right: 12%;
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    width: 2%;
+}
+
+
+.carts
+{
+    position: absolute;
+    right: 13%;
+    top: 4%;
+    cursor: pointer;
+    /* padding: 2px 2px; */
+    width: 3%;
+}
+
+
+
+
+
+.form-popups
+{
+    /* display: none; */
+    position: absolute;
+    border: 2px solid gray;
+    border-radius: 10px;
+    background-color: white;
+    width: 25%;
+    top: 14%;
+    right: 7%;
+    height: 50%;
+}
+
+.headerCart
+{
+    margin-top: 5%;
+    margin-left: 20%;
+}
+
+.titles
+{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    /* padding: 22px 15px; */
+    margin-top: 25%;
+}
+
+.titles p
+{
+    padding: 5px 5px;
+}
+
+/* .title
+{
+   margin-left: 1%;
+   margin-top: -10%;
+} */
+
+
+.cartIncrease
+{
+    position: absolute;
+    top: 25%;
+    left: 25%;
+    font-size: 1.5rem;
+}
+
+
+
+.check
+{
+    position: relative;
+    margin-top: 65%;
+    width: 300px;
+    left: -15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: orangered;
+    border-radius: 5px;
+    border: none;
+    color: white;
+    font-size: large;
+    height: 20%;
+    cursor: pointer;
+}
+
+.check:hover
+{
+    opacity: 0.5;
+}
+
+/* .cancel
+{
+    position: relative;
+    margin-top: 5%;
+    width: 10%;
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} */
+
+.cancelLogo
+{
+    position: absolute;
+    top: 10%;
+    right: 5%;
 }

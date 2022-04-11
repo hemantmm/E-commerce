@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
-// import logo from '../src/images/Shoess/logo.svg'
+
 
 import './Sneakers.css';
-import cartLogo from '../../../images/icon-cart.svg'
+// import cartLogos from '../../../images/icon-cart.svg'
+import cartLogos from '../../../images/icon-cart.svg'
 import logo1 from '../../../images/image-product-1.jpg'
 import closeLogo from '../../../images/icon-close.svg'
 import SneakersData from './SneakersData';
@@ -10,71 +11,97 @@ import SneakersData from './SneakersData';
 
 
 function Sneakers() {
- const[increase11,setIncrease111]=useState(0)
- const[increase12,setIncrease112]=useState(0)
- const[increase13,setIncrease113]=useState(0)
- const[increase14,setIncrease114]=useState(0)
+  
+  const [showForms, setshowForms] = useState(false)
+  const [incr1, setincr1] = useState(0);
+  const [incr2, setincr2] = useState(0);
+  const [incr3, setincr3] = useState(0);
+  const [incr4, setincr4] = useState(0);
 
+  const lists=[];
+  const { productItems } = SneakersData;
 
- const [showForm,setShowForm]=useState(false)
+  const btnHandle = (id) => {
+    console.log('sub', id)
+    {
+      productItems.map((data) => (
+        data.id === id && console.log(data.name)
+      ))
+    }
+    id === 1 && setincr1(prev => prev - 1);
+    id === 2 && setincr2(prev => prev - 1);
+    id === 3 && setincr3(prev => prev - 1);
+    id === 4 && setincr4(prev => prev - 1);
+  }
 
-const[increase1,setIncrease1]=useState(0)
-
-
-const {productItems}=SneakersData;
+  const btnPHandle = (id) => {
+    lists.push('add',id)
+    console.log('add', id)
+    {
+      productItems.map((data) => (
+        data.id === id && console.log(data.name)
+      ))
+    }
+    id === 1 && setincr1(prev => prev + 1);
+    id === 2 && setincr2(prev => prev + 1);
+    id === 3 && setincr3(prev => prev + 1);
+    id === 4 && setincr4(prev => prev + 1);
+  }
 
   return (
-<div >
-    {/* <h2>Sneakers</h2> */}
-<div className='menTitle'>
-      <h3>Mens </h3>     
-      
+    <div >
+      <h2>Sneakers</h2>
+      <div className='menTitle'>
+        <h3>Mens Active wear Shoes</h3>
+        <div className='Category1'>
+          {productItems.map((productItems) => (
+            <div className='itemsCart' key={productItems.id}>
+              <img src={productItems.image} alt={productItems.name} />
+              <h2>{productItems.name}</h2>
+              <h4>{productItems.price}</h4>
+              {/* <h3>{productItems.id}</h3> */}
+              <button onClick={() => btnHandle(productItems.id)}>-</button>
+              
+              <button onClick={() => btnPHandle(productItems.id)}>+</button>
 
-     <div className='Category1'>
-       {productItems.map((productItems)=>(
-            <div className='items'>
-            <img src={productItems.image} alt={productItems.name} />
-            <h2>2.{productItems.name}</h2>
-            <h4>2.{productItems.price}</h4>
-            <button>-</button>
-            <p>{increase1}</p>
-            <button onClick={()=>setIncrease1(increase1+1)}>+</button>
+
             </div>
-       ))}
-     </div>
+          ))}
+
+          <h2>{setincr1}</h2>
+
+        </div>
+
+        {/* {incr1 || incr2 || incr3 || incr4 ? <img src={cartLogos} alt="" className="carts" onClick={() => setshowForms(true)} /> : null} */}
+        <img src={cartLogos} alt="" className="carts" onClick={() => setshowForms(true)} />
+        {/* {incr1 || incr2 || incr3 || incr4 ? <p className="showCarts">{incr1}</p> : null} */}
+        <p className="showCarts">{incr1}</p>
+        {incr2 ? <p className="showCart">{incr2}</p> : null}
+        {/* <h2>hello</h2> */}
 
 
-      {/* <img src={cartLogo} alt="" id="cart" onClick={()=>setShowForm(true)} />
-    {increase1?<p className="showCart">{increase1}</p>:null}
+        {showForms ? <div className="form-popups" id="myForm">
+          <div classNme="form-container">
+            <h2 className='headerCart'>Cart</h2>
+
+            <img src={logo1} alt="" className="cartImage" />
+            <div className="titles">
+
+            {incr1>0?<p className="title1">$125 x {incr1} = ${incr1 * 125}</p>:null}
+           {incr2 ? <p className="title2">$125 x {incr2} = ${incr2 * 125}</p> :null}
+            {incr3?<p className="title3">$125 x {incr3} = ${incr3 * 125}</p>:null}
+            {incr4?<p className="title4">$125 x {incr4} = ${incr4 * 125}</p>:null}
+            </div>
 
 
-      {showForm ?<div className="form-popup" id="myForm">
-  <div classNme="form-container">
-<h2>Cart</h2>
-{!increase1?<p id="title">Your Cart is empty</p>:<span className="cartincrease1">Your cart has {increase1} {increase1>1? 'items':'item'}</span>}
-<img src={logo1} alt="" className="cartImage"/>
-<p className="title2">$125 x {increase1} = ${increase1*125}</p>
+            <button className="check" onClick={() => setincr1(0)}>Checkout</button>
+            <button className="btn cancelLogo" onClick={() => setshowForms(false)}>
+              <img src={closeLogo} alt="" className='closeLogo' />
+            </button>
+          </div>
+        </div> : null}
 
-  <button id="check" onClick={()=>setIncrease1(0)}>Checkout</button>
-<button className="btn cancel" onClick={()=>setShowForm(false)}>
-<img src={closeLogo} alt="" />
-</button>
-</div>
-</div>:null} */}
-
-      {/* <div className='Category1'>
-      <img src={shoe1} alt="" />
-      <h2>Nike LeBron 9</h2>
-      <h4>₹17,495</h4>
-      {increase1>0?<button className='minus' onClick={()=>setIncrease11(increase1-1)}>-</button>:null}
-      <p className='contents'>{increase1}</p>
-      <button className='plus' onClick={()=>setIncrease11(increase1+1)}>+</button>
-      </div> */}
-
-      {/* <img src={shoe1} alt="" />
-      <img src={shoe2} alt="" /> */}
-    {/* </div> */}
-    </div>
+      </div>
     </div>
   )
 }
