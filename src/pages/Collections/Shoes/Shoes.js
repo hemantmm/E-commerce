@@ -70,15 +70,20 @@ function Shoes() {
         </div>
 
         {inc1 || inc2 || inc3 || inc4 ? <img src={cartLogo} alt="" id="cart" onClick={() => setShowForm(true)} /> : null}
-        {inc1 || inc2 || inc3 || inc4 ? <p className="showCart">{increase}</p> : null}
+        {inc1 || inc2 || inc3 || inc4 ? <p className="showCart">{inc1}</p> : null}
 
 
-        {showForm ? <div className="form-popup" id="myForm">
+        {showForm ? <div className="form-popup" >
           <div classNme="form-container">
             <h2>Cart</h2>
             {!increase ? <p id="title">Your Cart is empty</p> : <span className="cartIncrease">Your cart has {increase} {increase > 1 ? 'items' : 'item'}</span>}
             <img src={logo1} alt="" className="cartImage" />
-            <p className="title2">$125 x {inc1} = ${inc1 * 125}</p>
+            <div className='titles'>
+             <p className="title2" style={{ background: 'red' }}>$125 x {inc1} = ${inc1 * 125}</p>
+             <p className="title2" style={{ background: 'green' }}>$125 x {inc2} = ${inc2 * 125}</p>
+             <p className="title2" style={{ background: 'blue' }}>$125 x {inc3} = ${inc3 * 125}</p>
+             <p className="title2" style={{ background: 'yellow' }}>$125 x {inc4} = ${inc4 * 125}</p>
+            </div>
 
             <button id="check" onClick={() => setIncrease(0)}>Checkout</button>
             <button className="btn cancel" onClick={() => setShowForm(false)}>
