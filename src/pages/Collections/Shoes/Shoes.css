@@ -1,41 +1,24 @@
-.menTitle {
+
+.menTitle
+{
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-<<<<<<< HEAD
-.Category1 {
-    display: flex;
-    justify-content: space-evenly;
-    flex-direction: row;
-    margin-top: 5%;
-    flex-wrap: wrap;
-=======
-.Category1
-{
+/* .Category1 */
+/* { */
     /* display: flex; */
     /* justify-content: space-evenly; */
     /* flex-direction: row; */
     /* margin-top: 5%; */
     /* flex-wrap: wrap; */
->>>>>>> 129ab3ab5be073597f9912b73a27bc15ea49f91b
     /* max-width: 35%; */
     /* align-items: center; */
     /* background-color: red; */
+    
+/* } */
 
-}
-
-<<<<<<< HEAD
-.Category1 img {
-    max-width: 35%;
-    padding: 10px 0px;
-}
-
-.items {
-    display: flex;
-    justify-content: space-around;
-=======
 
 .Category1 >div >img
 {
@@ -47,16 +30,17 @@
 {
     /* display: flex; */
     /* justify-content: space-around; */
->>>>>>> 129ab3ab5be073597f9912b73a27bc15ea49f91b
     align-items: center;
 }
 
-.Category1 img:hover {
+.Category1 img:hover
+{
     transform: scale(1.2);
     transition: 1.5s;
 }
 
-.minus {
+.minus
+{
     position: relative;
     padding: 0px 5px;
     font-size: 2rem;
@@ -64,7 +48,8 @@
     cursor: pointer;
 }
 
-.plus {
+.plus
+{
     position: relative;
     padding: 0px 5px;
     font-size: 2rem;
@@ -72,16 +57,13 @@
     cursor: pointer;
 }
 
-.contents {
+.contents
+{
     position: relative;
     font-size: large;
     font-weight: bold;
 }
 
-<<<<<<< HEAD
-.form-popup{
-    /* position: absolute; */
-=======
 
 
 .Carts
@@ -108,22 +90,12 @@
 {
     /* display: none; */
     position: absolute;
->>>>>>> 129ab3ab5be073597f9912b73a27bc15ea49f91b
     border: 2px solid gray;
     border-radius: 10px;
     background-color: white;
     width: 25%;
     top: 14%;
     right: 7%;
-<<<<<<< HEAD
-    height: 60%;
-
-}
-
-.title2{
-    display: flex;
-    flex-direction: column;
-=======
     height: 50%;
 }
 
@@ -203,5 +175,4 @@
     position: absolute;
     top: 10%;
     right: 5%;
->>>>>>> 129ab3ab5be073597f9912b73a27bc15ea49f91b
 }
