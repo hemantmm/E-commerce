@@ -7,28 +7,25 @@ import logo4 from '../../../images/image-product-4.jpg'
 const SneakersData={
     productItems:[
         {
-            id:"1",
+            id:1,
             name:"nike1",
             price:7500,
             image:logo1,
-            buttonMinus:"-",
-            p:"he",
-            buttonPlus:"+"
         },
         {
-            id:"2",
+            id:2,
             name:"nike2",
             price:17500,
             image:logo2
         },
         {
-            id:"3",
+            id:3,
             name:"nike3",
             price:10500,
             image:logo3
         },
         {
-            id:"4",
+            id:4,
             name:"nike4",
             price:18500,
             image:logo4

@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-// import logo from '../src/images/Shoess/logo.svg'
 
 import './Shoes.css';
 import cartLogo from '../../../images/icon-cart.svg'
@@ -16,11 +15,11 @@ function Shoes() {
   const [inc3, setInc3] = useState(0);
   const [inc4, setInc4] = useState(0);
 
-  const lists=[];
-    // {inc1 > -1 && productItems.id === 1 && <p>{inc1}</p>}
-    //           {inc2 > -1 && productItems.id === 2 && <p>{inc2}</p>}
-    //           {inc3 > -1 && productItems.id === 3 && <p>{inc3}</p>}
-    //           {inc4 > -1 && productItems.id === 4 && <p>{inc4}</p>}
+  const lists = [];
+  // {inc1 > -1 && productItems.id === 1 && <p>{inc1}</p>}
+  //           {inc2 > -1 && productItems.id === 2 && <p>{inc2}</p>}
+  //           {inc3 > -1 && productItems.id === 3 && <p>{inc3}</p>}
+  //           {inc4 > -1 && productItems.id === 4 && <p>{inc4}</p>}
 
 
   const { productItems } = data;
@@ -39,7 +38,7 @@ function Shoes() {
   }
 
   const btnPHandle = (id) => {
-    lists.push('add',id)
+    lists.push('add', id)
     console.log('add', id)
     {
       productItems.map((data) => (
@@ -65,11 +64,21 @@ function Shoes() {
               <h4>{productItems.price}</h4>
               {/* <h3>{productItems.id}</h3> */}
               <button onClick={() => btnHandle(productItems.id)}>-</button>
-              
+              {inc1 > -1 && productItems.id === 1 && <p>{inc1}</p>}
+              {inc2 > -1 && productItems.id === 2 && <p>{inc2}</p>}
+              {inc3 > -1 && productItems.id === 3 && <p>{inc3}</p>}
+              {inc4 > -1 && productItems.id === 4 && <p>{inc4}</p>}
               <button onClick={() => btnPHandle(productItems.id)}>+</button>
 
               {/* const ids=`${productItems.id}`; */}
               {/* {incr.img2 > 0 ? <h2>{incr.img1}</h2> : <h2>{ }</h2>} */}
+              {/* {inc1 ? <p className="title1">{productItems.price} x {inc1} = ${inc1 * 125}</p> : null} */}
+              {/* <div className="titles">
+              {inc1 ? <p className="title1">{productItems.price} x {inc1} = ${inc1 * 125}</p> : null}
+              {inc2 ? <p className="title2">$125 x {inc2} = ${inc2 * 125}</p> : null}
+              {inc3 ? <p className="title3">$125 x {inc3} = ${inc3 * 125}</p> : null}
+              {inc4 ? <p className="title4">$125 x {inc4} = ${inc4 * 125}</p> : null}
+            </div> */}
 
             </div>
           ))}
@@ -79,8 +88,8 @@ function Shoes() {
         </div>
 
         {inc1 || inc2 || inc3 || inc4 ? <img src={cartLogo} alt="" id="cart" onClick={() => setShowForm(true)} /> : null}
-        {inc1 || inc2 || inc3 || inc4 ? <p className="showCart">{inc1}</p> : null}
-        {inc2 ? <p className="showCart">{inc2}</p> : null}
+        {inc1 || inc2 || inc3 || inc4 ? <p className="showCart">1</p> : null}
+        {/* {inc2 ? <p className="showCart">{inc2}</p> : null} */}
 
 
         {showForm ? <div className="form-popups" id="myForm">
@@ -89,15 +98,22 @@ function Shoes() {
             {/* {!increase ? <p className="title">Your Cart is empty</p> : <span className="cartIncrease">Your cart has {increase} {increase > 1 ? 'items' : 'item'}</span>} */}
             <img src={logo1} alt="" className="cartImage" />
             <div className="titles">
-            {/* <h2>{lists} </h2> */}
-            {inc1?<p className="title1">$125 x {inc1} = ${inc1 * 125}</p>:null}
-           {inc2 ? <p className="title2">$125 x {inc2} = ${inc2 * 125}</p> :null}
-            {inc3?<p className="title3">$125 x {inc3} = ${inc3 * 125}</p>:null}
-            {inc4?<p className="title4">$125 x {inc4} = ${inc4 * 125}</p>:null}
+              {inc1 ? <p className="title1">{productItems.price} x {inc1} = ${inc1 * 125}</p> : null}
+              {inc2 ? <p className="title2">$125 x {inc2} = ${inc2 * 125}</p> : null}
+              {inc3 ? <p className="title3">$125 x {inc3} = ${inc3 * 125}</p> : null}
+              {inc4 ? <p className="title4">$125 x {inc4} = ${inc4 * 125}</p> : null}
             </div>
 
+            <button className="check" onClick={() => {
+              setInc1(0);
+              setInc2(0);
+              setInc3(0);
+              setInc4(0);
+              setShowForm(false); // try to close it after 3 sec..
+            }}>
+              Checkout
+            </button>
 
-            <button className="check" onClick={() => setInc1(0)}>Checkout</button>
             <button className="btn cancelLogo" onClick={() => setShowForm(false)}>
               <img src={closeLogo} alt="" className='closeLogo' />
             </button>

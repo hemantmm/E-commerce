@@ -6,8 +6,8 @@
     align-items: center;
 }
 
-.Category1
-{
+/* .Category1 */
+/* { */
     /* display: flex; */
     /* justify-content: space-evenly; */
     /* flex-direction: row; */
@@ -17,7 +17,7 @@
     /* align-items: center; */
     /* background-color: red; */
     
-}
+/* } */
 
 
 .Category1 >div >img
